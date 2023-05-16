@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dodaj nowy komentarz</h1>
+    <form method="post" action="{{ request.url }}">
+        <label for="message">Treść komentarza:</label>
+        <textarea name="message" id="message"></textarea>
+        <button type="submit">Dodaj komentarz</button>
+    </form>
+{% endblock %}

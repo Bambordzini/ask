@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Edytuj odpowiedź</h1>
+    <form method="post" action="{{ url_for('edit_answer', answer_id=answer.id) }}">
+        <label for="message">Treść odpowiedzi:</label>
+        <textarea name="message" id="message">{{ answer.message }}</textarea>
+        <button type="submit">Zaktualizuj odpowiedź</button>
+    </form>
+{% endblock %}

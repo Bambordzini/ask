@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Zadaj nowe pytanie</h1>
+    <form method="post" action="{{ url_for('new_question') }}">
+        <label for="title">Tytuł:</label>
+        <input type="text" name="title" id="title">
+        <label for="message">Treść pytania:</label>
+        <textarea name="message" id="message"></textarea>
+        <button type="submit">Zadaj pytanie</button>
+    </form>
+{% endblock %}

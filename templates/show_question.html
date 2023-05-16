@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ question.title }}</h1>
+    <p>{{ question.message }}</p>
+    <a href="{{ url_for('edit_question', question_id=question.id) }}">Edytuj pytanie</a>
+
+    <h2>Odpowiedzi</h2>
+    <ul>
+        {% for answer in answers %}
+            <li>{{ answer.message }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="post" action="{{ url_for('new_answer', question_id=question.id) }}">
+        <label for="message">Twoja odpowiedź:</label>
+        <textarea name="message" id="message"></textarea>
+        <button type="submit">Dodaj odpowiedź</button>
+    </form>
+{% endblock %}

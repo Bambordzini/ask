@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Lista pytań</h1>
+    <a href="{{ url_for('new_question') }}">Zadaj nowe pytanie</a>
+    <ul>
+        {% for question in questions %}
+            <li><a href="{{ url_for('show_question', question_id=question.id) }}">{{ question.title }}</a></li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Edytuj komentarz</h1>
+    <form method="post" action="{{ url_for('edit_comment', comment_id=comment.id) }}">
+        <label for="message">Treść komentarza:</label>
+        <textarea name="message" id="message">{{ comment.message }}</textarea>
+        <button type="submit">Zaktualizuj komentarz</button>
+    </form>
+{% endblock %}

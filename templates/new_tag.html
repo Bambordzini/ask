@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dodaj nowy tag do pytania</h1>
+    <form method="post" action="{{ request.url }}">
+        <label for="tag_name">Nazwa tagu:</label>
+        <input type="text" name="tag_name" id="tag_name">
+        <button type="submit">Dodaj tag</button>
+    </form>
+{% endblock %}

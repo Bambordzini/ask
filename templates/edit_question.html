@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Edytuj pytanie</h1>
+    <form method="post" action="{{ url_for('edit_question', question_id=question.id) }}">
+        <label for="title">Tytuł:</label>
+        <input type="text" name="title" id="title" value="{{ question.title }}">
+        <label for="message">Treść pytania:</label>
+        <textarea name="message" id="message">{{ question.message }}</textarea>
+        <button type="submit">Zaktualizuj pytanie</button>
+    </form>
+{% endblock %}
